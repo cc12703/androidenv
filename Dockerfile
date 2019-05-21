@@ -1,5 +1,5 @@
 
-FROM ubuntu:18.04
+FROM ubuntu:14.04
 
 MAINTAINER morris "cc12703@gmail.com"
 
@@ -9,7 +9,7 @@ ENV LANG="en_US.UTF-8" \
     LANGUAGE="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8"
 
-RUN apt-get clean && apt-get update -qq && apt-get install -qq -y apt-utils locales && locale-gen $LANG
+RUN locale-gen $LANG
 
 
 
@@ -19,9 +19,9 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 
 
 # Installing packages
-RUN apt-get update && \
+RUN apt-add-repository ppa:openjdk-r/ppa   && \
+    apt-get update && \
     apt-get install -y --no-install-recommends \
-        openjdk-8-jdk \
         autoconf \
         build-essential \
         bzip2 \
@@ -33,6 +33,7 @@ RUN apt-get update && \
         lib32z1 \
         lib32z1-dev \
         lib32ncurses5 \
+ 	lib32bz2-1.0 \
         libc6-dev \
         libgmp-dev \
         libmpc-dev \
@@ -46,17 +47,17 @@ RUN apt-get update && \
         openssh-client \
         pkg-config \
         rsync \
+	python-software-properties \
         software-properties-common \
         unzip \
         wget \
         zip \
         zlib1g-dev \
         p7zip-full \
-        openssh-server  && \
+        openssh-server  \
+	openjdk-8-jdk   && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-
 
 
 
