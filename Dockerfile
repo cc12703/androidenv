@@ -73,6 +73,8 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip &&
           "platforms;android-27"  \
           "platforms;android-28"  \
           "build-tools;21.1.1" \
+          "build-tools;24.0.3" \
+          "build-tools;25.0.3" \
           "build-tools;26.0.2" \
           "build-tools;27.0.3" \
           "build-tools;28.0.3" \
