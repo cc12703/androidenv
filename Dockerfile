@@ -20,6 +20,7 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 
 # Installing packages
 RUN apt-get update && \
+    apt-get dist-upgrade -y && \
     apt-get install -y --no-install-recommends \
         autoconf \
         build-essential \
@@ -65,6 +66,8 @@ RUN apt-add-repository ppa:openjdk-r/ppa   && \
     rm -rf /var/lib/apt/lists/*
 
 
+
+RUN update-ca-certificates -f
 
 
 # Install Android SDK
