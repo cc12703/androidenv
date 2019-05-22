@@ -19,8 +19,7 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 
 
 # Installing packages
-RUN apt-add-repository ppa:openjdk-r/ppa   && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         autoconf \
         build-essential \
@@ -33,7 +32,7 @@ RUN apt-add-repository ppa:openjdk-r/ppa   && \
         lib32z1 \
         lib32z1-dev \
         lib32ncurses5 \
- 	lib32bz2-1.0 \
+ 	    lib32bz2-1.0 \
         libc6-dev \
         libgmp-dev \
         libmpc-dev \
@@ -47,17 +46,24 @@ RUN apt-add-repository ppa:openjdk-r/ppa   && \
         openssh-client \
         pkg-config \
         rsync \
-	python-software-properties \
+	    python-software-properties \
         software-properties-common \
         unzip \
         wget \
         zip \
         zlib1g-dev \
         p7zip-full \
-        openssh-server  \
-	openjdk-8-jdk   && \
+        openssh-server  && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# Install Java
+RUN apt-add-repository ppa:openjdk-r/ppa   && \
+    apt-get update && \
+    apt-get -y install openjdk-8-jdk && \ 
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 
 
 
