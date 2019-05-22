@@ -88,8 +88,8 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip &&
           "cmake;3.6.4111459" \
           "ndk-bundle"  \
           "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.1" \
-          "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" 
-
+          "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
+	  --no_https
 
 
 
