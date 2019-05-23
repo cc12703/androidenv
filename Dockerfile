@@ -97,14 +97,14 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip &&
 
 
 # Environment variables
-ENV ANDROID_HOME=/usr/local/android-sdk \
-    ANDROID_SDK_HOME=$ANDROID_HOME  \
-    ANDROID_NDK_HOME=/usr/local/android-sdk/ndk-bundle \
-    PATH=$PATH:$ANDROID_SDK_HOME/tools/bin  \
-    PATH=$PATH:$ANDROID_SDK_HOME/tools  \
-    PATH=$PATH:$ANDROID_SDK_HOME/platform-tools  \
-    PATH=$PATH:$ANDROID_NDK_HOME   \
-    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/  
+ENV ANDROID_HOME=/usr/local/android-sdk  \
+    ANDROID_SDK_HOME=/usr/local/android-sdk \
+    ANDROID_NDK_HOME=/usr/local/android-sdk/ndk-bundle  \
+    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+
+
+ENV PATH=$PATH:$ANDROID_SDK_HOME/tools/bin:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools:$ANDROID_NDK_HOME
+
 
 
 
