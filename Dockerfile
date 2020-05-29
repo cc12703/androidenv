@@ -5,9 +5,9 @@ MAINTAINER morris "cc12703@gmail.com"
 
 
 # Set locale
-ENV LANG="en_US.UTF-8" \
-    LANGUAGE="en_US.UTF-8" \
-    LC_ALL="en_US.UTF-8"
+ENV LANG="zh_CN.UTF-8" \
+    LANGUAGE="zh_CN:zh" \
+    LC_ALL="zh_CN.UTF-8"
 
 RUN locale-gen $LANG
 
